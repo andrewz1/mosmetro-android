@@ -119,6 +119,7 @@ dependencies {
         exclude module: 'junit'
     }
     compile 'com.edmodo:rangebar:1.0.0'
+    compile 'dnsjava:dnsjava:2.1.9'
 
     // Test dependencies.
     testCompile 'junit:junit:4.12'

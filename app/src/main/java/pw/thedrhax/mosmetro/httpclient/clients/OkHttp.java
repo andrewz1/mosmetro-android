@@ -51,6 +51,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import pw.thedrhax.mosmetro.httpclient.Client;
+import pw.thedrhax.mosmetro.httpclient.DnsClient;
 import pw.thedrhax.mosmetro.httpclient.ParsedResponse;
 import pw.thedrhax.util.WifiUtils;
 
@@ -60,7 +61,10 @@ public class OkHttp extends Client {
 
     public OkHttp(Context context) {
         super(context);
-        client = new OkHttpClient.Builder().cookieJar(new InterceptedCookieJar()).build();
+        client = new OkHttpClient.Builder()
+                .cookieJar(new InterceptedCookieJar())
+                .dns(DnsClient.INSTANCE)
+                .build();
         configure();
     }
 
